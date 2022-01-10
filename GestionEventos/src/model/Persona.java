@@ -1,6 +1,8 @@
 package model;
 
-public class Persona {
+import java.util.regex.Pattern;
+
+public class Persona implements IMaxCaracteres{
     private String sDni;
     private String sNombre;
     private String sApellido;
@@ -11,40 +13,70 @@ public class Persona {
     private String sRol;
     private String sInformacion; 
     
+
     public String getsDni() {
         return sDni;
     }
+
     public void setsDni(String sDni) {
-        this.sDni = sDni;
+        String dniRegexp = "\\d{8}[A-HJ-NP-TV-Z]";
+		if (Pattern.matches(dniRegexp, sDni)) {
+			this.sDni = sDni;
+		}
     }
+
     public String getsNombre() {
         return sNombre;
     }
     public void setsNombre(String sNombre) {
-        this.sNombre = sNombre;
+        if (sNombre != null && sNombre.length() > IMINIMO && sNombre.length() < IMAXNOMBRE)  {
+            this.sNombre = sNombre;
+        }
     }
+
     public String getsApellido() {
         return sApellido;
     }
+
     public void setsApellido(String sApellido) {
-        this.sApellido = sApellido;
+        if (sApellido != null && sApellido.length() > IMINIMO && sApellido.length() < IMAXAPELLIDOS)  {
+            this.sApellido = sApellido;
+        }    
     }
+
     public String getsUsername() {
         return sUsername;
     }
+
     public void setsUsername(String sUsername) {
-        this.sUsername = sUsername;
+        if (sUsername != null && sUsername.length() < IMAXUSER && sUsername.length() > IMINIMO) {
+            this.sUsername = sUsername;
+        }
     }
+
     public String getsPassword() {
         return sPassword;
     }
+
+
     public void setsPassword(String sPassword) {
+        if(sPassword != null && sPassword.length() < IMAXPASS && sPassword.length() > IMINIMO){
+            this.sPassword = sPassword;
+        }
         this.sPassword = sPassword;
     }
+
+
     public String getsCorreo() {
         return sCorreo;
     }
+
+
     public void setsCorreo(String sCorreo) {
+        String emailRegexp = "\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b";
+        if (Pattern.matches(emailRegexp, sCorreo)) {
+			this.sCorreo = sCorreo;
+		}
         this.sCorreo = sCorreo;
     }
     public String getsTelefono() {
