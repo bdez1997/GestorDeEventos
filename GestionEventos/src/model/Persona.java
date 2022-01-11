@@ -7,14 +7,25 @@ import java.util.regex.Pattern;
 
 public class Persona implements IMaxCaracteres{
     private String sDni;
-    private String sNombre;
-    private String sApellido;
-    private String sUsername;
-    private String sPassword;
-    private String sCorreo;
-    private String sTelefono;
-    private String sInformacion; 
+    private String sNombre, sApellido, sUsername,sPassword, sCorreo, sTelefono, sInformacion; 
     private static ArrayList<String> arrayRol = new ArrayList<String>();
+    
+    public Persona(String sDni) {
+    	getsDni();
+    }
+    
+    public Persona(String sDni, String sNombre,String sApellido,String sUsername,String sPassword,
+    		String sCorreo,String sTelefono,String sInformacion, ArrayList<String> arrayRol) {
+    	getsDni();
+    	getsNombre();
+    	getsApellido();
+    	getsUsername();
+    	getsPassword();
+    	getsCorreo();
+    	getsTelefono();
+    	getsInformacion();
+    	getArrayRol();
+    }
     
     
     public static void addRoles() {
@@ -22,17 +33,19 @@ public class Persona implements IMaxCaracteres{
     	arrayRol.add("Trabajador");
     	arrayRol.add("Asociado");
     	arrayRol.add("Empresa");
-    	
     }
 
+    
     public ArrayList<String> getArrayRol() {
 		return arrayRol;
 	}
 
+    
 	public String getsDni() {
         return sDni;
     }
 
+	
     public void setsDni(String sDni) {
         String dniRegexp = "\\d{8}[A-HJ-NP-TV-Z]";
 		if (Pattern.matches(dniRegexp, sDni)) {
@@ -40,9 +53,12 @@ public class Persona implements IMaxCaracteres{
 		}
     }
 
+    
     public String getsNombre() {
         return sNombre;
     }
+    
+    
     public void setsNombre(String sNombre) {
         if (sNombre != null && sNombre.length() > IMINIMO && sNombre.length() < IMAXNOMBRE)  {
             this.sNombre = sNombre;

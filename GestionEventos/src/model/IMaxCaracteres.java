@@ -1,6 +1,7 @@
 package model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public interface IMaxCaracteres {
     final int IMINIMO = 1;
@@ -17,8 +18,5 @@ public interface IMaxCaracteres {
     
     final int IMAXTLFN = 9;
     
-    final Date DFECHAMAXIMA = new Date ();
-    @SuppressWarnings("deprecation")
-	final Date DFECHAMINIMA = new Date (122, 0, 1);
    
 }
