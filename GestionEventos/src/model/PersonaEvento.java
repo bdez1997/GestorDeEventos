@@ -16,10 +16,5 @@ public class PersonaEvento implements IMaxCaracteres{
         }
     }
 
-    public PersonaEvento (Persona oPersona, Evento oEvento, String sValoracion){
-        oPersona.setsDni(null);
-        
-    }
-
 
 }
