@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class Persona implements IMaxCaracteres{
@@ -79,24 +80,70 @@ public class Persona implements IMaxCaracteres{
 		}
         this.sCorreo = sCorreo;
     }
+
+
     public String getsTelefono() {
         return sTelefono;
     }
+
     public void setsTelefono(String sTelefono) {
-        this.sTelefono = sTelefono;
+       String tlfnRegexp = "(\\d{3})\\d{9}";
+       if (Pattern.matches(tlfnRegexp, sTelefono)) {
+            this.sTelefono = sTelefono;
+        }  
     }
     public String getsRol() {
         return sRol;
     }
+
+    
     public void setsRol(String sRol) {
         this.sRol = sRol;
     }
+
+
     public String getsInformacion() {
         return sInformacion;
     }
+
     public void setsInformacion(String sInformacion) {
         this.sInformacion = sInformacion;
+       
     }
+
+	@Override
+	public String toString() {
+		String sResultado = "";
+		
+		sResultado += "DNI: " + getsDni() + "\n";
+		sResultado += "Nombre : " + getsNombre() + " " + getsApellido() + "\n";
+		sResultado += "Username: " + getsUsername() + "\n";
+		sResultado += "Pass: " + "*********" + "\n";
+		sResultado += "Correo: " + getsCorreo() + "\n";
+		sResultado += "Telefono: " + getsTelefono() + "\n";
+		sResultado += "DNI: " + getsDni() + "\n";
+		
+		if(sInformacion != null) {
+			sResultado += "Informacion adiccional: " + getsInformacion();
+		}
+		return sResultado;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(sApellido, sCorreo, sDni, sInformacion, sNombre, sPassword, sRol, sTelefono, sUsername);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean bExito = false;
+		Persona oPersona = (Persona) obj;
+		if (oPersona.getsDni() != null && this.getsDni() != null && this.getsDni() == oPersona.getsDni()) {
+			bExito = true;
+		}
+		return bExito;
+	}
+
    
 
     
