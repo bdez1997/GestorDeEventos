@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 public class Empresa {
 
@@ -14,13 +15,24 @@ public class Empresa {
 		setiTelefono(iTelefono);
 		setsCorreo(sCorreo);
 	}
+	
+
+	public Empresa(String sNif) {
+		this.sNif = sNif;
+	}
+
 
 	public String getsNif() {
 		return sNif;
 	}
 
 	public void setsNif(String sNif) {
-		this.sNif = sNif;
+		
+		String nifRegeXp="[[A-H][J-N][P-S]UVW][0-9]{7}[0-9A-J]";
+		
+		if (Pattern.matches(nifRegeXp, sNif)) {
+			this.sNif = sNif;
+		}	
 	}
 
 	public int getiTelefono() {
@@ -38,7 +50,9 @@ public class Empresa {
 	public void setsCorreo(String sCorreo) {
 		this.sCorreo = sCorreo;
 	}
-
+	
+	
+	
 	public int hashCode() {
 		return Objects.hash(sNif);
 	}
@@ -51,6 +65,8 @@ public class Empresa {
 		}
 		return boEquals;
 	}
+	
+	
 
 	public String toString() {
 
