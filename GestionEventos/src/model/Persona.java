@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
@@ -11,11 +13,23 @@ public class Persona implements IMaxCaracteres{
     private String sPassword;
     private String sCorreo;
     private String sTelefono;
-    private String sRol;
     private String sInformacion; 
+    private static ArrayList<String> arrayRol = new ArrayList<String>();
     
+    
+    public static void addRoles() {
+    	arrayRol.add("Voluntario");
+    	arrayRol.add("Trabajador");
+    	arrayRol.add("Asociado");
+    	arrayRol.add("Empresa");
+    	
+    }
 
-    public String getsDni() {
+    public ArrayList<String> getArrayRol() {
+		return arrayRol;
+	}
+
+	public String getsDni() {
         return sDni;
     }
 
@@ -64,7 +78,6 @@ public class Persona implements IMaxCaracteres{
         if(sPassword != null && sPassword.length() < IMAXPASS && sPassword.length() > IMINIMO){
             this.sPassword = sPassword;
         }
-        this.sPassword = sPassword;
     }
 
 
@@ -78,7 +91,6 @@ public class Persona implements IMaxCaracteres{
         if (Pattern.matches(emailRegexp, sCorreo)) {
 			this.sCorreo = sCorreo;
 		}
-        this.sCorreo = sCorreo;
     }
 
 
@@ -92,23 +104,16 @@ public class Persona implements IMaxCaracteres{
             this.sTelefono = sTelefono;
         }  
     }
-    public String getsRol() {
-        return sRol;
-    }
-
-    
-    public void setsRol(String sRol) {
-        this.sRol = sRol;
-    }
-
+   
 
     public String getsInformacion() {
         return sInformacion;
     }
 
     public void setsInformacion(String sInformacion) {
-        this.sInformacion = sInformacion;
-       
+        if(sInformacion.length() < IMAXDESCRIPCION && sInformacion.length() > IMINIMO) {
+        	this.sInformacion = sInformacion;
+        }
     }
 
 	@Override
@@ -121,7 +126,6 @@ public class Persona implements IMaxCaracteres{
 		sResultado += "Pass: " + "*********" + "\n";
 		sResultado += "Correo: " + getsCorreo() + "\n";
 		sResultado += "Telefono: " + getsTelefono() + "\n";
-		sResultado += "DNI: " + getsDni() + "\n";
 		
 		if(sInformacion != null) {
 			sResultado += "Informacion adiccional: " + getsInformacion();
@@ -131,7 +135,7 @@ public class Persona implements IMaxCaracteres{
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(sApellido, sCorreo, sDni, sInformacion, sNombre, sPassword, sRol, sTelefono, sUsername);
+		return Objects.hash(sApellido, sCorreo, sDni, sInformacion, sNombre, sPassword, sTelefono, sUsername);
 	}
 
 	@Override
