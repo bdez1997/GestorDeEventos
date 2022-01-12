@@ -1,6 +1,5 @@
 package start;
 
-import model.Empresa;
 
 public class Init {
 

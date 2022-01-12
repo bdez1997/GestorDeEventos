@@ -6,13 +6,13 @@ import java.util.regex.Pattern;
 public class Empresa {
 
 	private String sNif;
-	private int iTelefono;
+	private String sTelefono;
 	private String sCorreo;
 
-	public Empresa(String sNif, int iTelefono, String sCorreo) {
+	public Empresa(String sNif, String sTelefono, String sCorreo) {
 
 		setsNif(sNif);
-		setiTelefono(iTelefono);
+		setsTelefono(sTelefono);
 		setsCorreo(sCorreo);
 	}
 	
@@ -35,12 +35,16 @@ public class Empresa {
 		}	
 	}
 
-	public int getiTelefono() {
-		return iTelefono;
+	public String getsTelefono() {
+		return sTelefono;
 	}
 
-	public void setiTelefono(int iTelefono) {
-		this.iTelefono = iTelefono;
+	public void setsTelefono(String sTelefono) {
+		
+		String tlfnRegexp = "(\\d{3})\\d{9}";
+	       if (Pattern.matches(tlfnRegexp, sTelefono)) {
+	            this.sTelefono = sTelefono;
+	        }
 	}
 
 	public String getsCorreo() {
@@ -48,7 +52,11 @@ public class Empresa {
 	}
 
 	public void setsCorreo(String sCorreo) {
-		this.sCorreo = sCorreo;
+		
+		 String emailRegexp = "\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b";
+	        if (Pattern.matches(emailRegexp, sCorreo)) {
+				this.sCorreo = sCorreo;
+			}
 	}
 	
 	
@@ -73,7 +81,7 @@ public class Empresa {
 		String sResultado;
 
 		sResultado = "NIF: " + getsNif() + "\n";
-		sResultado += "Teléfono: " + getiTelefono() + "\n";
+		sResultado += "Teléfono: " + getsTelefono() + "\n";
 		sResultado += "Correo: " + getsCorreo();
 
 		return sResultado;

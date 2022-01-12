@@ -1,6 +1,7 @@
 package model;
 
 public interface IMaxCaracteres {
+	
     final int IMINIMO = 1;
     final int IMAXIMO = 10;
 

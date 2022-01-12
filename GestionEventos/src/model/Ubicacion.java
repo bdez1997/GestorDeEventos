@@ -12,12 +12,14 @@ public class Ubicacion {
 	private int iNumero;
 
 	public Ubicacion(int id_ubicacion, String sCiudad, String sProvincia, int iCodPostal, String sCalle, int iNumero) {
+
 		setId_ubicacion(id_ubicacion);
 		setsCiudad(sCiudad);
 		setsProvincia(sProvincia);
 		setiCodPostal(iCodPostal);
 		setsCalle(sCalle);
 		setiNumero(iNumero);
+
 	}
 
 	public Ubicacion() {
@@ -84,22 +86,19 @@ public class Ubicacion {
 			this.iNumero = iNumero;
 		}
 	}
-	
-	
 
 	public int hashCode() {
 		return Objects.hash(id_ubicacion);
 	}
 
 	public boolean equals(Object obj) {
-		
-		boolean boEquals=false;
-		Ubicacion uUbicacion=(Ubicacion)obj;
-		
-		if (uUbicacion.getId_ubicacion()!=0
-				&&this.getId_ubicacion()!=0
-				&&this.getId_ubicacion()==uUbicacion.id_ubicacion) {
-			boEquals=true;
+
+		boolean boEquals = false;
+		Ubicacion uUbicacion = (Ubicacion) obj;
+
+		if (uUbicacion.getId_ubicacion() != 0 && this.getId_ubicacion() != 0
+				&& this.getId_ubicacion() == uUbicacion.id_ubicacion) {
+			boEquals = true;
 		}
 		return boEquals;
 	}
