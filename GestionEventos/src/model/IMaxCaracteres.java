@@ -1,5 +1,8 @@
 package model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public interface IMaxCaracteres {
 	
     final int IMINIMO = 1;
@@ -15,6 +18,6 @@ public interface IMaxCaracteres {
     final int IMAXPASS = 12;
     
     final int IMAXTLFN = 9;
+    
    
-
 }
