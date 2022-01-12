@@ -16,13 +16,15 @@ public class PersonaEvento implements IMaxCaracteres{
         }
     }
     
+    public PersonaEvento(Persona oPersona, Evento oEvento) {
+    	oPersona.setsDni(null);
+    	oEvento.setIdEvento(0);
+    }
+    
     public PersonaEvento(Persona oPersona, Evento oEvento, String sValoracion) {
     	oPersona.setsDni(null);
     	oEvento.setIdEvento(0);
     	setsValoracion(sValoracion);
     }
-    
-    
-
 
 }
