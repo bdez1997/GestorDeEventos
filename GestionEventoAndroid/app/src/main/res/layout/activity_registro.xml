@@ -41,6 +41,7 @@
         android:ems="10"
         android:hint="DNI"
         android:inputType="textPersonName"
+        android:text="@string/editText"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtApellidos" />
@@ -75,12 +76,13 @@
         android:layout_width="173dp"
         android:layout_height="51dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Tlfn"
         android:inputType="phone"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="298dp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPass" />
 
     <Spinner
         android:id="@+id/spinnerRoles"
