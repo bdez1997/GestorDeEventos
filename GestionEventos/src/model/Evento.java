@@ -1,32 +1,45 @@
 package model;
 
 import java.awt.Image;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Evento {
 
+	private String nombre;
 	private int idEvento;
-	private Date fechaInit;
-	private Date fechaFin;
-	private Date HoraInit;
-	private Date HoraFin;
+	private LocalDate fechaInit;
+	private LocalDate fechaFin;
+	private LocalDate HoraInit;
+	private LocalDate HoraFin;
 	private int aforo;
 	private String descripcion;
 	private Image imagen;
 	private int idUbicacion;
 
-	public Evento(int idEvento, Date fechaInit, Date fechaFin, Date horaInit, Date horaFin, int aforo,
-			String descripcion, Image imagen, int idUbicacion) {
+	public Evento(int idEvento, LocalDate fechaInit, LocalDate fechaFin, LocalDate horaInit, LocalDate horaFin, int aforo,
+			String descripcion, Image imagen, int idUbicacion,String nombre) {
 		
+		this.nombre = nombre;
 		this.idEvento = idEvento;
 		this.fechaInit = fechaInit;
 		this.fechaFin = fechaFin;
-		HoraInit = horaInit;
-		HoraFin = horaFin;
+		this.HoraInit = horaInit;
+		this.HoraFin = horaFin;
 		this.aforo = aforo;
 		this.descripcion = descripcion;
 		this.imagen = imagen;
 		this.idUbicacion = idUbicacion;
+	}
+	
+	public void getNombre(String nombre) {
+		if (nombre.length() <= 250) {
+			this.nombre = nombre;
+		}
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public int getIdEvento() {
@@ -39,35 +52,35 @@ public class Evento {
 		}
 	}
 
-	public Date getFechaInit() {
+	public LocalDate getFechaInit() {
 		return fechaInit;
 	}
 
-	public void setFechaInit(Date fechaInit) {
+	public void setFechaInit(LocalDate fechaInit) {
 		this.fechaInit = fechaInit;
 	}
 
-	public Date getFechaFin() {
+	public LocalDate getFechaFin() {
 		return fechaFin;
 	}
 
-	public void setFechaFin(Date fechaFin) {
+	public void setFechaFin(LocalDate fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 
-	public Date getHoraInit() {
+	public LocalDate getHoraInit() {
 		return HoraInit;
 	}
 
-	public void setHoraInit(Date horaInit) {
+	public void setHoraInit(LocalDate horaInit) {
 		HoraInit = horaInit;
 	}
 
-	public Date getHoraFin() {
+	public LocalDate getHoraFin() {
 		return HoraFin;
 	}
 
-	public void setHoraFin(Date horaFin) {
+	public void setHoraFin(LocalDate horaFin) {
 		HoraFin = horaFin;
 	}
 
