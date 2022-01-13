@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">GestionEventoAndroid</string>
+
+    <string name="btnRegistro">Resgistrarse</string>
+    <string name="txtRegistro">REGISTRO</string>
+
+    <string-array name="roles">
+        <item>Trabajador</item>
+        <item>Voluntario</item>
+        <item>Asociado</item>
+        <item>Empresa</item>
+    </string-array>
+
 </resources>
