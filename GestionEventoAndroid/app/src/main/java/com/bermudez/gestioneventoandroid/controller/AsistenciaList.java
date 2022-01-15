@@ -7,8 +7,6 @@ import java.util.List;
 
 public class AsistenciaList {
 
-    public static List<Evento>lstAsistenciaEvento= new ArrayList();
+    public static List<Evento>lstAsistenciaEvento   = new ArrayList();
     public static int iAsistenciaSelected;
-
-
 }

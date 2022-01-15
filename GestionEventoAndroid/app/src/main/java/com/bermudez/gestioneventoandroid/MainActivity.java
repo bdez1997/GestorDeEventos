@@ -1,6 +1,7 @@
 package com.bermudez.gestioneventoandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +9,7 @@ import android.widget.Button;
 
 import com.bermudez.gestioneventoandroid.fragments.AsistenciaFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     Button btnTest;
 

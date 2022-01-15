@@ -22,9 +22,6 @@ public class AsistenciaFragment extends Fragment {
     ImageView imgEvento;
     RecyclerView rvHistorial;
 
-
-
-
     public AsistenciaFragment() {
         // Required empty public constructor
     }
@@ -34,6 +31,7 @@ public class AsistenciaFragment extends Fragment {
         imgEvento.setImageResource(R.drawable.user);
 
         Evento ev = new Evento("MangaFest",imgEvento);
+
         AsistenciaList.lstAsistenciaEvento.add(ev);
     }
 
@@ -49,6 +47,14 @@ public class AsistenciaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        return inflater.inflate(R.layout.fragment_asistencia, container, false);
+    }
+
+   /* @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_asistencia, container, false);
 
         rvHistorial= vista.findViewById(R.id.rvHistorial);
@@ -56,5 +62,5 @@ public class AsistenciaFragment extends Fragment {
         llenarLista();
 
         return vista;
-    }
+    }*/
 }

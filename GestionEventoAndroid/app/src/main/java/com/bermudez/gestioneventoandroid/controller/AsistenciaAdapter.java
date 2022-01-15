@@ -2,9 +2,7 @@ package com.bermudez.gestioneventoandroid.controller;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.net.Uri;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +36,6 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.Vi
             listener.onClick(v);
         }
     }
-
     @NonNull
     @Override
     public AsistenciaAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -48,12 +45,9 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.Vi
 
         return new ViewHolder(view);
     }
-
-
     public int getItemCount() {
         return AsistenciaList.lstAsistenciaEvento.size();
     }
-
 
     @SuppressLint("ResourceType")
     public void onBindViewHolder(@NonNull AsistenciaAdapter.ViewHolder holder, int position) {
@@ -62,7 +56,6 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.Vi
 
         holder.txtNombreAsistencia.setText(strNombreAsistencia);
         holder.imgAsistencia.setImageResource(imgAsistenciaEvento);
-
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
