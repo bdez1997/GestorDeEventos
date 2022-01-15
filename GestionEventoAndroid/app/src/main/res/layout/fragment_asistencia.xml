@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.AsistenciaFragment">
+    tools:context=".fragments.AsistenciaFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHistorial"

@@ -1,5 +1,6 @@
 package com.bermudez.gestioneventoandroid.controller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
@@ -42,7 +43,7 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.Vi
     @Override
     public AsistenciaAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = inflater.inflate(R.layout.asistencia_list, parent, false);
+        View view = inflater.inflate(R.layout.fragment_asistencia, parent, false);
         view.setOnClickListener((View.OnClickListener) this);
 
         return new ViewHolder(view);
@@ -54,12 +55,13 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.Vi
     }
 
 
+    @SuppressLint("ResourceType")
     public void onBindViewHolder(@NonNull AsistenciaAdapter.ViewHolder holder, int position) {
         String strNombreAsistencia = AsistenciaList.lstAsistenciaEvento.get(position).getsNombreEvento();
-        Drawable imgAsistenciaEvento=AsistenciaList.lstAsistenciaEvento.get(position).getImagen().getDrawable();
+        int imgAsistenciaEvento=AsistenciaList.lstAsistenciaEvento.get(position).getImagen().getId();
 
         holder.txtNombreAsistencia.setText(strNombreAsistencia);
-        holder.imgAsistencia.setImageDrawable(imgAsistenciaEvento);
+        holder.imgAsistencia.setImageResource(imgAsistenciaEvento);
 
     }
 

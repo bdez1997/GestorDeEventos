@@ -1,15 +1,12 @@
 package com.bermudez.gestioneventoandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 
-import com.bermudez.gestioneventoandroid.Fragments.AsistenciaFragment;
-import com.bermudez.gestioneventoandroid.models.Evento;
+import com.bermudez.gestioneventoandroid.fragments.AsistenciaFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnTest.setOnClickListener(e->{
             Intent i = new Intent(this, AsistenciaFragment.class);
+            startActivity(i);
         });
 
         

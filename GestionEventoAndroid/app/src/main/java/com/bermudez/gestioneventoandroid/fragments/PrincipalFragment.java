@@ -1,4 +1,4 @@
-package com.bermudez.gestioneventoandroid.Fragments;
+package com.bermudez.gestioneventoandroid.fragments;
 
 import android.os.Bundle;
 

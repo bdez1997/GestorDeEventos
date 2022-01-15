@@ -22,11 +22,12 @@ public class Evento {
 
 
 
-    public Evento(Uri imagen){
-        setImagen(imagen);
+    public Evento(String sNombre,ImageView imgEvento){
+        setsNombreEvento(sNombre);
+        setImagen(imgEvento);
     }
     public Evento(int idEvento,String sNombreEvento, Date fechaInit, Date fechaFin, Date horaInit, Date horaFin, int aforo,
-                  String descripcion, Uri imagen, int idUbicacion) {
+                  String descripcion, ImageView imagen, int idUbicacion) {
 
         setIdEvento(idEvento);
         setsNombreEvento(sNombreEvento);
@@ -114,8 +115,8 @@ public class Evento {
         return imagen;
     }
 
-    public void setImagen(Uri imagen) {
-        this.imagen.setImageURI(imagen);
+    public void setImagen(ImageView imagen) {
+        this.imagen = imagen;
     }
 
     public int getidUbicacion() {
