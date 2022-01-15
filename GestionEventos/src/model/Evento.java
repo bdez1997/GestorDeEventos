@@ -2,6 +2,7 @@ package model;
 
 import java.awt.Image;
 import java.util.Date;
+import java.util.Objects;
 
 public class Evento {
 
@@ -18,15 +19,15 @@ public class Evento {
 	public Evento(int idEvento, Date fechaInit, Date fechaFin, Date horaInit, Date horaFin, int aforo,
 			String descripcion, Image imagen, int idUbicacion) {
 		
-		this.idEvento = idEvento;
-		this.fechaInit = fechaInit;
-		this.fechaFin = fechaFin;
-		HoraInit = horaInit;
-		HoraFin = horaFin;
-		this.aforo = aforo;
-		this.descripcion = descripcion;
-		this.imagen = imagen;
-		this.idUbicacion = idUbicacion;
+		setIdEvento(idEvento);
+        setFechaInit(fechaInit);
+        setFechaFin(fechaFin);
+        setHoraInit(horaInit);
+        setHoraFin(horaFin);
+        setAforo(aforo);
+        setDescripcion(descripcion);
+        setImagen(imagen);
+        setIdEvento(idUbicacion);
 	}
 
 	public int getIdEvento() {
@@ -107,6 +108,23 @@ public class Evento {
 		if (Integer.toString(idUbicacion).length() <= 10) {
 			this.idUbicacion = idUbicacion;
 		}
+	}
+	
+	public int hashCode() {
+		return Objects.hash(idEvento);
+	}
+
+	public boolean equals(Object obj) {
+		
+		boolean boEquals = false;
+		Evento oEvento = (Evento)obj;
+		if(oEvento.getIdEvento()!=0 &&this.getIdEvento()!=0
+				&& this.getIdEvento()==oEvento.idEvento) {
+			
+			boEquals=true;
+		}
+		
+		return boEquals;
 	}
 
 	@Override
