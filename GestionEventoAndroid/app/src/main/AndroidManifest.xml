@@ -14,9 +14,6 @@
             android:name=".controller.EventosAdapter"
             android:exported="true"
             tools:ignore="Instantiatable" />
-        <activity android:name="com.bermudez.gestioneventoandroid.fragments.AsistenciaFragment"
-            android:exported="true"
-            tools:ignore="Instantiatable" />
         <activity
             android:name=".PrincipalActivity"
             android:exported="true" />

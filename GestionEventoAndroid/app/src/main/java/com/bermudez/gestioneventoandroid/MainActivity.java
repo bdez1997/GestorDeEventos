@@ -1,12 +1,15 @@
 package com.bermudez.gestioneventoandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
+import com.bermudez.gestioneventoandroid.controller.AsistenciaList;
 import com.bermudez.gestioneventoandroid.fragments.AsistenciaFragment;
 
 public class MainActivity extends AppCompatActivity  {
@@ -20,13 +23,19 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         btnTest=findViewById(R.id.btnTest);
 
-        btnTest.setOnClickListener(e->{
-            Intent i = new Intent(this, AsistenciaFragment.class);
-            startActivity(i);
+        btnTest.setOnClickListener(r ->{
+            this.abrirAsistencia();
         });
-
-        
     }
+
+    private void abrirAsistencia(){
+        Intent intent = new Intent(this, AsistenciaList.class);
+        startActivity(intent);
+    }
+
+
+
 }
