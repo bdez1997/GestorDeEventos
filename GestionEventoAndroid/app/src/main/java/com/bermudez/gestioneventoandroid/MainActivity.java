@@ -30,28 +30,16 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        fechaInit = new Date("11/1/2022");
-        fechaFin= new Date("20/1/2022");
-        imgUser = findViewById(R.drawable.user);
-        Evento ev = new Evento("Mangafest", imgUser, fechaInit,fechaFin);
-        Store.lstEventos.add(ev);
-        btnTest=findViewById(R.id.btnTest);
-        btnTest.setOnClickListener(r ->{
-            loadFragment(new AsistenciaFragment());
-        });
-
-
     }
 
-
+/*
     private void loadFragment(Fragment fragment){
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.fragmentContainerView, fragment);
         ft.commit();
     }
-
+*/
 
 
 }

@@ -44,10 +44,12 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull EventosAdapter.ViewHolder holder, int position) {
+
         holder.imgEvento.setImageResource(R.drawable.user);
         holder.lblNombreEvento.setText(Store.lstEventos.get(position).getsNombreEvento() + "");
         holder.lblFechaFin.setText(Store.lstEventos.get(position).getFechaFin() + "");
         holder.lblFechaInit.setText(Store.lstEventos.get(position).getFechaInit() + "");
+
     }
 
     @Override
