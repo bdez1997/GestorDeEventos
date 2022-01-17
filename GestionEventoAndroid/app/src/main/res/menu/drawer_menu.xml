@@ -11,10 +11,10 @@
                 android:title="Historial"
                 android:id="@+id/opHistorial">
             </item>
-
         </menu>
-
     </item>
+
+
     <item
         android:title="SALIR"
         android:id="@+id/salir">
