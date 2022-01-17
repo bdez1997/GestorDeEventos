@@ -5,8 +5,9 @@ import com.bermudez.gestioneventoandroid.models.Evento;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AsistenciaList {
+public class Store {
 
-    public static List<Evento> lstAsistenciaEvento = new ArrayList<Evento>();
+    public static List<Evento> lstEventos = new ArrayList<Evento>();
     public static int iAsistenciaSelected;
+    public static List<Evento> asistenciaLst = new ArrayList<Evento>();
 }

@@ -22,9 +22,12 @@ public class Evento {
 
 
 
-    public Evento(String sNombre,ImageView imgEvento){
+    public Evento(String sNombre,ImageView imgEvento,Date fechaInit,Date fechaFin){
         setsNombreEvento(sNombre);
         setImagen(imgEvento);
+        setFechaInit(fechaInit);
+        setFechaFin(fechaFin);
+
     }
     public Evento(int idEvento,String sNombreEvento, Date fechaInit, Date fechaFin, Date horaInit, Date horaFin, int aforo,
                   String descripcion, ImageView imagen, int idUbicacion) {
@@ -152,14 +155,14 @@ public class Evento {
         String sResultado;
 
         sResultado = getIdEvento() + "\n";
-        sResultado = getFechaInit() + "\n";
-        sResultado = getFechaFin() + "\n";
-        sResultado = getHoraInit() + "\n";
-        sResultado = getHoraFin() + "\n";
-        sResultado = getAforo() + "\n";
-        sResultado = getImagen() + "\n";
-        sResultado = getidUbicacion() + "\n";
-        sResultado = getIdEvento() + "\n";
+        sResultado += getFechaInit() + "\n";
+        sResultado += getFechaFin() + "\n";
+        sResultado += getHoraInit() + "\n";
+        sResultado += getHoraFin() + "\n";
+        sResultado += getAforo() + "\n";
+        sResultado += getImagen() + "\n";
+        sResultado += getidUbicacion() + "\n";
+        sResultado += getIdEvento() + "\n";
         sResultado = getidUbicacion() + "\n";
         return sResultado;
     }

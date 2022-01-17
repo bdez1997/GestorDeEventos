@@ -18,6 +18,10 @@
             android:name=".PrincipalActivity"
             android:exported="true" />
         <activity
+            android:name=".controller.Store"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+        <activity
             android:name=".RegistroActivity"
             android:exported="true" />
         <activity

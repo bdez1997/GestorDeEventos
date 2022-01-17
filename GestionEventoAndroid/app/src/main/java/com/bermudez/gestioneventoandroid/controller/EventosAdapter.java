@@ -1,14 +1,13 @@
 package com.bermudez.gestioneventoandroid.controller;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bermudez.gestioneventoandroid.R;
@@ -20,7 +19,8 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
     private View.OnClickListener listener;
 
     public EventosAdapter(Context context){
-        this.context=context;
+        inflater=LayoutInflater.from(context);
+        this.context = context;
     }
 
     public void setOnClickListener(View.OnClickListener listener){
@@ -44,12 +44,15 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull EventosAdapter.ViewHolder holder, int position) {
-    
+        holder.imgEvento.setImageResource(R.drawable.user);
+        holder.lblNombreEvento.setText(Store.lstEventos.get(position).getsNombreEvento() + "");
+        holder.lblFechaFin.setText(Store.lstEventos.get(position).getFechaFin() + "");
+        holder.lblFechaInit.setText(Store.lstEventos.get(position).getFechaInit() + "");
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return Store.lstEventos.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -57,9 +60,11 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
         TextView lblNombreEvento;
         TextView lblFechaInit;
         TextView lblFechaFin;
+        ImageView imgEvento;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            imgEvento = itemView.findViewById(R.id.imageViewEvento);
             lblNombreEvento = itemView.findViewById(R.id.lblNombreEvento);
             lblFechaInit = itemView.findViewById(R.id.lblFechaInit);
             lblFechaFin = itemView.findViewById(R.id.lblFechaFin);
