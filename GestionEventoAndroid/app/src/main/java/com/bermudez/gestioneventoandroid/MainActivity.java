@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
 
-        openFragment(new AsistenciaFragment());
     }
 
     private void openFragment(Fragment fragment){
@@ -60,28 +59,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    private void showData(){
+        Store.asistenciaLst.add(new Evento("Mangafest"));
+        Store.asistenciaLst.add(new Evento("Ficzone"));
+
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         drawerLayout.closeDrawer(GravityCompat.START);
-        /*
-        switch(item.getItemId()){
-            case R.id.opcion1: openFragment(new AsistenciaFragment()); break;
-            case R.id.opcion2: openFragment(new Opcion2Fragment()); break;
-            case R.id.opcion3: openFragment(new Opcion3Fragment()); break;
-            case R.id.salir: salir(); break;
+
+        switch(item.getItemId()) {
+            //case R.id.opUsuario: openFragment(new AsistenciaFragment()); break;
+            case R.id.opHistorial:
+                openFragment(new AsistenciaFragment());
+                break;
+            case R.id.salir:
+                salir();
+                break;
         }
-        */
         return false;
     }
 
-/*
-    private void loadFragment(Fragment fragment){
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.fragmentContainerView, fragment);
-        ft.commit();
-    }
-*/
 
     private void salir() {
         finish();
