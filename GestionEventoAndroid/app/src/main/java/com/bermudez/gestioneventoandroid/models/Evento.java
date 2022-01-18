@@ -22,6 +22,9 @@ public class Evento {
     private int idUbicacion;
 
 
+    public Evento(String sNombre){
+        setsNombreEvento(sNombre);
+    }
 
     public Evento(String sNombre, ImageView imgEvento, LocalDateTime fechaInit, LocalDateTime fechaFin){
         setsNombreEvento(sNombre);

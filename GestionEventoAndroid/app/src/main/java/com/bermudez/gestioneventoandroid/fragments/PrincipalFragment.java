@@ -12,7 +12,6 @@ import com.bermudez.gestioneventoandroid.R;
 
 public class PrincipalFragment extends Fragment {
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
