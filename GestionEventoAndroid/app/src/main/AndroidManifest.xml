@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.bermudez.gestioneventoandroid">
 
     <application
@@ -10,10 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GestionEventoAndroid">
         <activity
+<<<<<<< HEAD
             android:name=".Valoracion"
             android:exported="true" />
         <activity
             android:name=".Confirmacion"
+=======
+            android:name=".controller.EventosAdapter"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".PrincipalActivity"
+            android:exported="true" />
+        <activity
+            android:name=".controller.Store"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".RegistroActivity"
+>>>>>>> main
             android:exported="true" />
         <activity
             android:name=".MainActivity"

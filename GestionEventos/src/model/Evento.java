@@ -1,8 +1,13 @@
 package model;
 
 import java.awt.Image;
+<<<<<<< HEAD
 import java.time.LocalDate;
 
+=======
+import java.util.Date;
+import java.util.Objects;
+>>>>>>> main
 
 public class Evento {
 
@@ -20,6 +25,7 @@ public class Evento {
 	public Evento(int idEvento, LocalDate fechaInit, LocalDate fechaFin, LocalDate horaInit, LocalDate horaFin, int aforo,
 			String descripcion, Image imagen, int idUbicacion,String nombre) {
 		
+<<<<<<< HEAD
 		this.nombre = nombre;
 		this.idEvento = idEvento;
 		this.fechaInit = fechaInit;
@@ -30,6 +36,17 @@ public class Evento {
 		this.descripcion = descripcion;
 		this.imagen = imagen;
 		this.idUbicacion = idUbicacion;
+=======
+		setIdEvento(idEvento);
+        setFechaInit(fechaInit);
+        setFechaFin(fechaFin);
+        setHoraInit(horaInit);
+        setHoraFin(horaFin);
+        setAforo(aforo);
+        setDescripcion(descripcion);
+        setImagen(imagen);
+        setIdEvento(idUbicacion);
+>>>>>>> main
 	}
 	
 	public void getNombre(String nombre) {
@@ -120,6 +137,23 @@ public class Evento {
 		if (Integer.toString(idUbicacion).length() <= 10) {
 			this.idUbicacion = idUbicacion;
 		}
+	}
+	
+	public int hashCode() {
+		return Objects.hash(idEvento);
+	}
+
+	public boolean equals(Object obj) {
+		
+		boolean boEquals = false;
+		Evento oEvento = (Evento)obj;
+		if(oEvento.getIdEvento()!=0 &&this.getIdEvento()!=0
+				&& this.getIdEvento()==oEvento.idEvento) {
+			
+			boEquals=true;
+		}
+		
+		return boEquals;
 	}
 
 	@Override

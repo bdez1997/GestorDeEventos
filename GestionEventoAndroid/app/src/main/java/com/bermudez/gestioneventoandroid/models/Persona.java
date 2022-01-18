@@ -14,23 +14,18 @@ public class Persona implements IMaxCaracteres{
 
     public Persona(String sDni, String sNombre,String sApellido,String sUsername,String sPassword,
                    String sCorreo,String sTelefono,String sInformacion, ArrayList<String> arrayRol) {
-        getsDni();
-        getsNombre();
-        getsApellido();
-        getsUsername();
-        getsPassword();
-        getsCorreo();
-        getsTelefono();
-        getsInformacion();
-        getArrayRol();
+        setsDni(sDni);
+        setsNombre(sNombre);
+        setsApellido(sApellido);
+        setsUsername(sUsername);
+        setsPassword(sPassword);
+        setsCorreo(sCorreo);
+        setsTelefono(sTelefono);
+        setsInformacion(sInformacion);
+        setArrayRol();
     }
 
-
-    public static void addRoles() {
-        arrayRol.add("Voluntario");
-        arrayRol.add("Trabajador");
-        arrayRol.add("Asociado");
-        arrayRol.add("Empresa");
+    private void setArrayRol() {
     }
 
 

@@ -3,10 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".PrincipalActivity"
     android:id="@+id/drawerLayout"
     android:theme="@style/Navigation">
 
@@ -14,28 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         layout="@layout/content_main">
-
     </include>
 
     <include
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         layout="@layout/drawer_toolbar">
-
     </include>
 
     <com.google.android.material.navigation.NavigationView
-        android:id = "@+id/navigationView"
+        android:id="@+id/navigationView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:headerLayout="@layout/drawer_header"
         app:menu="@menu/drawer_menu"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true">
-
-    </com.google.android.material.navigation.NavigationView>
+        android:fitsSystemWindows="true"></com.google.android.material.navigation.NavigationView>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
-
-

@@ -1,5 +1,6 @@
 package com.bermudez.gestioneventoandroid.models;
 
+<<<<<<< HEAD
 import android.media.Image;
 
 import java.time.LocalDate;
@@ -40,6 +41,62 @@ public class Evento {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+=======
+import android.net.Uri;
+import android.widget.ImageView;
+
+import java.net.URI;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.Objects;
+
+public class Evento {
+
+    private String sNombreEvento;
+    private int idEvento;
+    private LocalDateTime fechaInit;
+    private LocalDateTime fechaFin;
+    private Date HoraInit;
+    private Date HoraFin;
+    private int aforo;
+    private String descripcion;
+    private ImageView imagen;
+    private int idUbicacion;
+
+
+    public Evento(String sNombre){
+        setsNombreEvento(sNombre);
+    }
+
+    public Evento(String sNombre, ImageView imgEvento, LocalDateTime fechaInit, LocalDateTime fechaFin){
+        setsNombreEvento(sNombre);
+        setImagen(imgEvento);
+        setFechaInit(fechaInit);
+        setFechaFin(fechaFin);
+
+    }
+    public Evento(int idEvento,String sNombreEvento, LocalDateTime fechaInit, LocalDateTime fechaFin, Date horaInit, Date horaFin, int aforo,
+                  String descripcion, ImageView imagen, int idUbicacion) {
+
+        setIdEvento(idEvento);
+        setsNombreEvento(sNombreEvento);
+        setFechaInit(fechaInit);
+        setFechaFin(fechaFin);
+        setHoraInit(horaInit);
+        setHoraFin(horaFin);
+        setAforo(aforo);
+        setDescripcion(descripcion);
+        setImagen(imagen);
+        setIdEvento(idUbicacion);
+    }
+
+    public String getsNombreEvento() {
+        return sNombreEvento;
+    }
+
+    public void setsNombreEvento(String sNombreEvento) {
+        this.sNombreEvento = sNombreEvento;
+>>>>>>> main
     }
 
     public int getIdEvento() {
@@ -52,6 +109,7 @@ public class Evento {
         }
     }
 
+<<<<<<< HEAD
     public LocalDate getFechaInit() {
         return fechaInit;
     }
@@ -81,6 +139,37 @@ public class Evento {
     }
 
     public void setHoraFin(LocalDate horaFin) {
+=======
+    public LocalDateTime getFechaInit() {
+        return fechaInit;
+    }
+
+    public void setFechaInit(LocalDateTime fechaInit) {
+        this.fechaInit = fechaInit;
+    }
+
+    public LocalDateTime getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(LocalDateTime fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public Date getHoraInit() {
+        return HoraInit;
+    }
+
+    public void setHoraInit(Date horaInit) {
+        HoraInit = horaInit;
+    }
+
+    public Date getHoraFin() {
+        return HoraFin;
+    }
+
+    public void setHoraFin(Date horaFin) {
+>>>>>>> main
         HoraFin = horaFin;
     }
 
@@ -104,11 +193,19 @@ public class Evento {
         this.descripcion = descripcion;
     }
 
+<<<<<<< HEAD
     public Image getImagen() {
         return imagen;
     }
 
     public void setImagen(Image imagen) {
+=======
+    public ImageView getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(ImageView imagen) {
+>>>>>>> main
         this.imagen = imagen;
     }
 
@@ -122,12 +219,33 @@ public class Evento {
         }
     }
 
+<<<<<<< HEAD
+=======
+    public int hashCode() {
+        return Objects.hash(idEvento);
+    }
+
+    public boolean equals(Object obj) {
+
+        boolean boEquals = false;
+        Evento oEvento = (Evento)obj;
+        if(oEvento.getIdEvento()!=0 &&this.getIdEvento()!=0
+                && this.getIdEvento()==oEvento.idEvento) {
+
+            boEquals=true;
+        }
+
+        return boEquals;
+    }
+
+>>>>>>> main
     @Override
     public String toString() {
 
         String sResultado;
 
         sResultado = getIdEvento() + "\n";
+<<<<<<< HEAD
         sResultado = getFechaInit() + "\n";
         sResultado = getFechaFin() + "\n";
         sResultado = getHoraInit() + "\n";
@@ -136,6 +254,16 @@ public class Evento {
         sResultado = getImagen() + "\n";
         sResultado = getidUbicacion() + "\n";
         sResultado = getIdEvento() + "\n";
+=======
+        sResultado += getFechaInit() + "\n";
+        sResultado += getFechaFin() + "\n";
+        sResultado += getHoraInit() + "\n";
+        sResultado += getHoraFin() + "\n";
+        sResultado += getAforo() + "\n";
+        sResultado += getImagen() + "\n";
+        sResultado += getidUbicacion() + "\n";
+        sResultado += getIdEvento() + "\n";
+>>>>>>> main
         sResultado = getidUbicacion() + "\n";
         return sResultado;
     }
