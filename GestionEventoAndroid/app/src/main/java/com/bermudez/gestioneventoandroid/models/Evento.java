@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.widget.ImageView;
 
 import java.net.URI;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
 
@@ -11,8 +12,8 @@ public class Evento {
 
     private String sNombreEvento;
     private int idEvento;
-    private Date fechaInit;
-    private Date fechaFin;
+    private LocalDateTime fechaInit;
+    private LocalDateTime fechaFin;
     private Date HoraInit;
     private Date HoraFin;
     private int aforo;
@@ -22,14 +23,14 @@ public class Evento {
 
 
 
-    public Evento(String sNombre,ImageView imgEvento,Date fechaInit,Date fechaFin){
+    public Evento(String sNombre, ImageView imgEvento, LocalDateTime fechaInit, LocalDateTime fechaFin){
         setsNombreEvento(sNombre);
         setImagen(imgEvento);
         setFechaInit(fechaInit);
         setFechaFin(fechaFin);
 
     }
-    public Evento(int idEvento,String sNombreEvento, Date fechaInit, Date fechaFin, Date horaInit, Date horaFin, int aforo,
+    public Evento(int idEvento,String sNombreEvento, LocalDateTime fechaInit, LocalDateTime fechaFin, Date horaInit, Date horaFin, int aforo,
                   String descripcion, ImageView imagen, int idUbicacion) {
 
         setIdEvento(idEvento);
@@ -62,19 +63,19 @@ public class Evento {
         }
     }
 
-    public Date getFechaInit() {
+    public LocalDateTime getFechaInit() {
         return fechaInit;
     }
 
-    public void setFechaInit(Date fechaInit) {
+    public void setFechaInit(LocalDateTime fechaInit) {
         this.fechaInit = fechaInit;
     }
 
-    public Date getFechaFin() {
+    public LocalDateTime getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Date fechaFin) {
+    public void setFechaFin(LocalDateTime fechaFin) {
         this.fechaFin = fechaFin;
     }
 

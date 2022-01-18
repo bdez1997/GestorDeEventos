@@ -6,7 +6,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,13 +14,15 @@ import com.bermudez.gestioneventoandroid.controller.Store;
 import com.bermudez.gestioneventoandroid.fragments.AsistenciaFragment;
 import com.bermudez.gestioneventoandroid.models.Evento;
 
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity  {
 
     Button btnTest;
     ImageView imgUser;
-    Date fechaInit;
+    LocalDateTime fechaInit;
     Date fechaFin;
 
     @SuppressLint("ResourceType")
@@ -30,20 +31,21 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        fechaInit = new Date("11/1/2022");
-        fechaFin= new Date("20/1/2022");
         imgUser = findViewById(R.drawable.user);
-        Evento ev = new Evento("Mangafest", imgUser, fechaInit,fechaFin);
-        Store.lstEventos.add(ev);
+        Store.lstEventos.clear();
         btnTest=findViewById(R.id.btnTest);
-        btnTest.setOnClickListener(r ->{
-            loadFragment(new AsistenciaFragment());
-        });
+        loadFragment(new AsistenciaFragment());
 
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Evento ev = new Evento("Mangafest", imgUser, LocalDateTime.of(2022, Month.MAY, 23, 20, 01),LocalDateTime.of(2022, Month.AUGUST, 23, 20, 01));
+        Store.lstEventos.add(ev);
+
+    }
 
     private void loadFragment(Fragment fragment){
         FragmentManager fm = getSupportFragmentManager();
