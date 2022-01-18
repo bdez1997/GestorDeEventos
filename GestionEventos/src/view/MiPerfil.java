@@ -9,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-javafx.application.Application
+
 
 public class MiPerfil extends JFrame {
 
